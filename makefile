@@ -2,7 +2,7 @@ CC=gcc
 CFLAG= -Wall -I. -O0
 OPTFLAG= -fopenmp -Wall -I. -O3
 
-TARGETS=unoptimized opt1# add your target here
+TARGETS=unoptimized opt1 opt2# add your target here
 
 all: $(TARGETS)
 
@@ -23,6 +23,11 @@ opt1: opt1.o microtime.o
 opt1.o: opt1.c microtime.h
 	$(CC) $(OPTFLAG) -c $<
 
+opt2: opt2.o microtime.o
+	$(CC) $(OPTFLAG) -o $@ $^
+
+opt2.o: opt2.c microtime.h
+	$(CC) $(OPTFLAG) -c $<
 
 # Add your rules here.
 # Example: code in opt1.c
