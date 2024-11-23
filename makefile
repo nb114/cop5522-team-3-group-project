@@ -29,6 +29,12 @@ opt2: opt2.o microtime.o
 opt2.o: opt2.c microtime.h
 	$(CC) $(OPTFLAG) -c $<
 
+opt3: opt3.o microtime.o
+	mpicc -o $@ $^
+
+opt3.o: opt3.c microtime.h
+	mpicc $(CFLAG) -c $<
+
 # Add your rules here.
 # Example: code in opt1.c
 
