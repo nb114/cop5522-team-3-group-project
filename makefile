@@ -24,20 +24,20 @@ unoptimized.o: unoptimized.c microtime.h
 microtime.o: microtime.c microtime.h
 	$(CC) $(CFLAG) -c $<
 
-omp_opt1: openMp/opt1.o microtime.o
+omp_opt1: openMP/opt1.o microtime.o
 	$(CC) $(OMP_FLAG) -o $@ $^
 
-openMp/opt1.o: openMp/opt1.c microtime.h
+openMP/opt1.o: openMP/opt1.c microtime.h
 	$(CC) $(OMP_FLAG) -c $< -o $@
 
-omp_opt2: openMp/opt2.o microtime.o
+omp_opt2: openMP/opt2.o microtime.o
 	$(CC) $(OMP_FLAG) -o $@ $^
 
-openMp/opt2.o: openMp/opt2.c microtime.h
+openMP/opt2.o: openMP/opt2.c microtime.h
 	$(CC) $(OMP_FLAG) -c $< -o $@
 
 # Add targets for OpenMP and MPI
-openmp: openMp/opt1.o microtime.o
+openmp: openMP/opt1.o microtime.o
 	$(CC) $(OMP_FLAG) -o $@ $^
 
 mpi_optimized: MPI/opt3.o microtime.o
@@ -71,7 +71,7 @@ run_mpi: $(MPI_TARGET)
 	for proc in $(THREADS); do \
 		for size in $(PROBLEM_SIZE); do \
 			echo "Running $$target with $$proc processes and number of elements $$size" | tee -a outputs/mpi_run_output.log; \
-			$(MPI_EXEC) $(MPI_EXEC_FLAG) $$proc ./$$target $$size $$size | tee -a outputs/mpi_run_output.log; \
+			$(MPI_EXEC) $(MPI_EXEC_FLAG) $$proc ./$(MPI_TARGET) $$size $$size | tee -a outputs/mpi_run_output.log; \
 			echo "===================" | tee -a outputs/mpi_run_output.log; \
 		done; \
 	done; \
