@@ -1,0 +1,101 @@
+Running  with 1 processes and number of elements 2048
+
+Time = 161 us
+Timer Resolution = 1 us
+Performance = 52.1032 Gflop/s
+Min value: 35629
+Max value: 2145831790
+
+===================
+Running  with 1 processes and number of elements 4096
+
+Time = 374 us
+Timer Resolution = 1 us
+Performance = 89.7177 Gflop/s
+Min value: 17228
+Max value: 2145831790
+
+===================
+Running  with 1 processes and number of elements 8192
+
+Time = 823 us
+Timer Resolution = 1 us
+Performance = 163.084 Gflop/s
+Min value: 17228
+Max value: 2147292607
+
+===================
+Running  with 1 processes and number of elements 16384
+
+Time = 1366 us
+Timer Resolution = 1 us
+Performance = 393.024 Gflop/s
+Min value: 17228
+Max value: 2147292607
+
+===================
+Running  with 2 processes and number of elements 2048
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 45756 RUNNING AT Nag
+=   EXIT CODE: 139
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Segmentation fault (signal 11)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions
+===================
+Running  with 2 processes and number of elements 4096
+===================
+Running  with 2 processes and number of elements 8192
+===================
+Running  with 2 processes and number of elements 16384
+===================
+Running  with 4 processes and number of elements 2048
+===================
+Running  with 4 processes and number of elements 4096
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 45912 RUNNING AT Nag
+=   EXIT CODE: 9
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Killed (signal 9)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions
+===================
+Running  with 4 processes and number of elements 8192
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 45933 RUNNING AT Nag
+=   EXIT CODE: 9
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Killed (signal 9)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions
+===================
+Running  with 4 processes and number of elements 16384
+===================
+Running  with 8 processes and number of elements 2048
+===================
+Running  with 8 processes and number of elements 4096
+===================
+Running  with 8 processes and number of elements 8192
+===================
+Running  with 8 processes and number of elements 16384
+===================
+Running  with 10 processes and number of elements 2048
+===================
+Running  with 10 processes and number of elements 4096
+===================
+Running  with 10 processes and number of elements 8192
+===================
+Running  with 10 processes and number of elements 16384
+===================

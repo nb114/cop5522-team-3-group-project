@@ -1,0 +1,360 @@
+Running omp_opt1 with argument 2048: and 1
+
+Time = 1207 us
+Timer Resolution = 1 us
+Performance = 6.94997 Gflop/s
+Min value: 834390
+Max value: 2146362006
+
+===================
+Running omp_opt1 with argument 4096: and 1
+
+Time = 3724 us
+Timer Resolution = 1 us
+Performance = 9.01032 Gflop/s
+Min value: 834390
+Max value: 2147230992
+
+===================
+Running omp_opt1 with argument 8192: and 1
+
+Time = 10179 us
+Timer Resolution = 1 us
+Performance = 13.1857 Gflop/s
+Min value: 194989
+Max value: 2147284438
+
+===================
+Running omp_opt1 with argument 16384: and 1
+
+Time = 16217 us
+Timer Resolution = 1 us
+Performance = 33.1054 Gflop/s
+Min value: 92447
+Max value: 2147462577
+
+===================
+Running omp_opt1 with argument 2048: and 2
+
+Time = 2049 us
+Timer Resolution = 1 us
+Performance = 4.094 Gflop/s
+Min value: 834390
+Max value: 2146362006
+
+===================
+Running omp_opt1 with argument 4096: and 2
+
+Time = 3119 us
+Timer Resolution = 1 us
+Performance = 10.7581 Gflop/s
+Min value: 834390
+Max value: 2147230992
+
+===================
+Running omp_opt1 with argument 8192: and 2
+
+Time = 6279 us
+Timer Resolution = 1 us
+Performance = 21.3757 Gflop/s
+Min value: 194989
+Max value: 2147284438
+
+===================
+Running omp_opt1 with argument 16384: and 2
+
+Time = 13556 us
+Timer Resolution = 1 us
+Performance = 39.6039 Gflop/s
+Min value: 92447
+Max value: 2147462577
+
+===================
+Running omp_opt1 with argument 2048: and 4
+
+Time = 30007 us
+Timer Resolution = 1 us
+Performance = 0.279555 Gflop/s
+Min value: 834390
+Max value: 2146362006
+
+===================
+Running omp_opt1 with argument 4096: and 4
+
+Time = 3187 us
+Timer Resolution = 1 us
+Performance = 10.5285 Gflop/s
+Min value: 834390
+Max value: 2147230992
+
+===================
+Running omp_opt1 with argument 8192: and 4
+
+Time = 6293 us
+Timer Resolution = 1 us
+Performance = 21.3281 Gflop/s
+Min value: 194989
+Max value: 2147284438
+
+===================
+Running omp_opt1 with argument 16384: and 4
+
+Time = 17482 us
+Timer Resolution = 1 us
+Performance = 30.7099 Gflop/s
+Min value: 92447
+Max value: 2147462577
+
+===================
+Running omp_opt1 with argument 2048: and 8
+
+Time = 36674 us
+Timer Resolution = 1 us
+Performance = 0.228734 Gflop/s
+Min value: 834390
+Max value: 2146362006
+
+===================
+Running omp_opt1 with argument 4096: and 8
+
+Time = 42247 us
+Timer Resolution = 1 us
+Performance = 0.794244 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt1 with argument 8192: and 8
+
+Time = 31103 us
+Timer Resolution = 1 us
+Performance = 4.31527 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt1 with argument 16384: and 8
+
+Time = 45117 us
+Timer Resolution = 1 us
+Performance = 11.8995 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt1 with argument 2048: and 10
+
+Time = 28310 us
+Timer Resolution = 1 us
+Performance = 0.296313 Gflop/s
+Min value: 310378
+Max value: 2147476821
+
+===================
+Running omp_opt1 with argument 4096: and 10
+
+Time = 32893 us
+Timer Resolution = 1 us
+Performance = 1.02011 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt1 with argument 8192: and 10
+
+Time = 39160 us
+Timer Resolution = 1 us
+Performance = 3.42742 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt1 with argument 16384: and 10
+
+Time = 58206 us
+Timer Resolution = 1 us
+Performance = 9.22364 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 2048: and 1
+
+Time = 235 us
+Timer Resolution = 1 us
+Performance = 35.6962 Gflop/s
+Min value: 310378
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 4096: and 1
+
+Time = 704 us
+Timer Resolution = 1 us
+Performance = 47.6625 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 8192: and 1
+
+Time = 1256 us
+Timer Resolution = 1 us
+Performance = 106.861 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 16384: and 1
+
+Time = 2879 us
+Timer Resolution = 1 us
+Performance = 186.478 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 2048: and 2
+
+Time = 243 us
+Timer Resolution = 1 us
+Performance = 34.521 Gflop/s
+Min value: 310378
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 4096: and 2
+
+Time = 1062 us
+Timer Resolution = 1 us
+Performance = 31.5955 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 8192: and 2
+
+Time = 1788 us
+Timer Resolution = 1 us
+Performance = 75.0658 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 16384: and 2
+
+Time = 2434 us
+Timer Resolution = 1 us
+Performance = 220.571 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 2048: and 4
+
+Time = 309 us
+Timer Resolution = 1 us
+Performance = 27.1476 Gflop/s
+Min value: 310378
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 4096: and 4
+
+Time = 504 us
+Timer Resolution = 1 us
+Performance = 66.5763 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 8192: and 4
+
+Time = 944 us
+Timer Resolution = 1 us
+Performance = 142.18 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 16384: and 4
+
+Time = 2220 us
+Timer Resolution = 1 us
+Performance = 241.834 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 2048: and 8
+
+Time = 161 us
+Timer Resolution = 1 us
+Performance = 52.1032 Gflop/s
+Min value: 310378
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 4096: and 8
+
+Time = 968 us
+Timer Resolution = 1 us
+Performance = 34.6637 Gflop/s
+Min value: 21174
+Max value: 2147476821
+
+===================
+Running omp_opt2 with argument 8192: and 8
+
+Time = 1557 us
+Timer Resolution = 1 us
+Performance = 86.2028 Gflop/s
+Min value: 269750
+Max value: 2147436617
+
+===================
+Running omp_opt2 with argument 16384: and 8
+
+Time = 3216 us
+Timer Resolution = 1 us
+Performance = 166.937 Gflop/s
+Min value: 269750
+Max value: 2147436617
+
+===================
+Running omp_opt2 with argument 2048: and 10
+
+Time = 185 us
+Timer Resolution = 1 us
+Performance = 45.3438 Gflop/s
+Min value: 269750
+Max value: 2146632266
+
+===================
+Running omp_opt2 with argument 4096: and 10
+
+Time = 14014 us
+Timer Resolution = 1 us
+Performance = 2.39435 Gflop/s
+Min value: 269750
+Max value: 2146632266
+
+===================
+Running omp_opt2 with argument 8192: and 10
+
+Time = 38732 us
+Timer Resolution = 1 us
+Performance = 3.46529 Gflop/s
+Min value: 269750
+Max value: 2147436617
+
+===================
+Running omp_opt2 with argument 16384: and 10
+
+Time = 12774 us
+Timer Resolution = 1 us
+Performance = 42.0284 Gflop/s
+Min value: 269750
+Max value: 2147436617
+
+===================

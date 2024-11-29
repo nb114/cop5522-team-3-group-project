@@ -1,0 +1,36 @@
+Running  with argument 2048
+
+Time = 212 us
+Timer Resolution = 1 us
+Performance = 39.5689 Gflop/s
+Min value: 547087
+Max value: 2145225766
+
+===================
+Running  with argument 4096
+
+Time = 331 us
+Timer Resolution = 1 us
+Performance = 101.373 Gflop/s
+Min value: 577807
+Max value: 2147356152
+
+===================
+Running  with argument 8192
+
+Time = 719 us
+Timer Resolution = 1 us
+Performance = 186.673 Gflop/s
+Min value: 139211
+Max value: 2147356152
+
+===================
+Running  with argument 16384
+
+Time = 1630 us
+Timer Resolution = 1 us
+Performance = 329.369 Gflop/s
+Min value: 139211
+Max value: 2147380840
+
+===================
