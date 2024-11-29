@@ -10,6 +10,7 @@
 void merge(int arr[], int left, int mid, int right);
 void mergeSort(int arr[], int left, int right);
 int *generateRandomNumbers(int n);
+int NUM_THREADS=2;
 
 void merge(int arr[], int left, int mid, int right)
 {
@@ -69,15 +70,23 @@ void mergeSort(int arr[], int left, int right)
         // Calculate the midpoint
         int mid = left + (right - left) / 2;
 
-		#pragma omp parallel num_threads(2)
-		{
+        if(right-left>2048){
+            #pragma omp parallel num_threads(NUM_THREADS)
+            {
 
-			// Sort first and second halves
-			#pragma omp single
-			mergeSort(arr, left, mid);
-			#pragma omp single
-			mergeSort(arr, mid + 1, right);
-		}
+                // Sort first and second halves
+                #pragma omp single
+                mergeSort(arr, left, mid);
+                #pragma omp single
+                mergeSort(arr, mid + 1, right);
+            }
+        }
+
+        else{
+
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+        }
 
 		
 
@@ -101,14 +110,15 @@ int *generateRandomNumbers(int n)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2)
+    if (argc != 3)
     {
-        fprintf(stderr, "Usage: %s <number_of_elements>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <number_of_elements> <num_threads>\n", argv[0]);
         return 1;
     }
 
     double start_time, end_time, elapsed_time;
     int n = atoi(argv[1]);
+    NUM_THREADS = atoi(argv[2]);
     int *arr = generateRandomNumbers(n);
 
     // Measure sorting time

@@ -1,8 +1,17 @@
 CC=gcc
-CFLAG= -Wall -I. -O0
-OPTFLAG= -fopenmp -Wall -I. -O3
+CFLAG= -Wall -I. -O3
+OMP_FLAG= -fopenmp -Wall -I. -O3
+MPI_CC=mpicc
+MPI_CFLAG= -Wall -I. -O3
+MPI_EXEC=mpiexec
+MPI_EXEC_FLAG= -n
 
-TARGETS=unoptimized opt1 opt2# add your target here
+PROBLEM_SIZE=2048 4096 8192 16384
+THREADS=1 2 4 8 10
+
+OMP_TARGETS=omp_opt1 omp_opt2
+MPI_TARGET=mpi_optimized
+TARGETS=unoptimized $(OMP_TARGETS) $(MPI_TARGET)
 
 all: $(TARGETS)
 
@@ -15,35 +24,60 @@ unoptimized.o: unoptimized.c microtime.h
 microtime.o: microtime.c microtime.h
 	$(CC) $(CFLAG) -c $<
 
+omp_opt1: openMp/opt1.o microtime.o
+	$(CC) $(OMP_FLAG) -o $@ $^
 
+openMp/opt1.o: openMp/opt1.c microtime.h
+	$(CC) $(OMP_FLAG) -c $< -o $@
 
-opt1: opt1.o microtime.o
-	$(CC) $(OPTFLAG) -o $@ $^
+omp_opt2: openMp/opt2.o microtime.o
+	$(CC) $(OMP_FLAG) -o $@ $^
 
-opt1.o: opt1.c microtime.h
-	$(CC) $(OPTFLAG) -c $<
+openMp/opt2.o: openMp/opt2.c microtime.h
+	$(CC) $(OMP_FLAG) -c $< -o $@
 
-opt2: opt2.o microtime.o
-	$(CC) $(OPTFLAG) -o $@ $^
+# Add targets for OpenMP and MPI
+openmp: openMp/opt1.o microtime.o
+	$(CC) $(OMP_FLAG) -o $@ $^
 
-opt2.o: opt2.c microtime.h
-	$(CC) $(OPTFLAG) -c $<
+mpi_optimized: MPI/opt3.o microtime.o
+	$(MPI_CC) -o $@ $^
 
-opt3: opt3.o microtime.o
-	mpicc -o $@ $^
+MPI/opt3.o: MPI/opt3.c microtime.h
+	$(MPI_CC) $(MPI_CFLAG) -c $< -o $@
 
-opt3.o: opt3.c microtime.h
-	mpicc $(CFLAG) -c $<
+run_unoptimized: unoptimized
+	mkdir -p outputs  # Create the outputs directory if it doesn't exist
+	for arg in $(PROBLEM_SIZE); do \
+		echo "Running $$target with argument $$arg"| tee -a outputs/unoptimized_run_output.log; \
+		./unoptimized $$arg | tee -a outputs/unoptimized_run_output.log; \
+		echo "==================="| tee -a outputs/unoptimized_run_output.log; \
+	done; \
 
-# Add your rules here.
-# Example: code in opt1.c
+run_omp: $(OMP_TARGETS)
+	mkdir -p outputs  # Create the outputs directory if it doesn't exist
+	for target in $(OMP_TARGETS); do \
+		for num_thread in $(THREADS); do \
+			for arg in $(PROBLEM_SIZE); do \
+				echo "Running $$target with argument $$arg: and $$num_thread" | tee -a outputs/omp_run_output.log; \
+				./$$target $$arg $$num_thread | tee -a outputs/omp_run_output.log; \
+				echo "===================" | tee -a outputs/omp_run_output.log; \
+			done; \
+		done; \
+	done;
 
-# opt1: opt1.o microtime.o
-# 	$(CC) -o $@ $^
-
-# opt1.o: opt1.c microtime.h
-# 	$(CC) $(CFLAG) -c $<
+run_mpi: $(MPI_TARGET)
+	mkdir -p outputs  # Create the outputs directory if it doesn't exist
+	for proc in $(THREADS); do \
+		for size in $(PROBLEM_SIZE); do \
+			echo "Running $$target with $$proc processes and number of elements $$size" | tee -a outputs/mpi_run_output.log; \
+			$(MPI_EXEC) $(MPI_EXEC_FLAG) $$proc ./$$target $$size $$size | tee -a outputs/mpi_run_output.log; \
+			echo "===================" | tee -a outputs/mpi_run_output.log; \
+		done; \
+	done; \
 
 
 clean:
-	rm -f *.o *~ core $(TARGETS)
+	rm -f *.o */*.o *~ core $(TARGETS)
+clean_outputs:
+	rm -rf outputs
